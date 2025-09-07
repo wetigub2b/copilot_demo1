@@ -15,6 +15,7 @@ A modern, responsive Vue.js website that replicates the design and functionality
 - **Vue 3**: Progressive JavaScript framework
 - **Vite**: Fast build tool and development server
 - **Vue Router**: Client-side routing for single-page application
+- **TypeScript**: Type-safe development with full Vue 3 support
 - **CSS3**: Modern styling with CSS custom properties and responsive design
 
 ## Project Structure
@@ -70,6 +71,16 @@ src/
 
 ```bash
 npm run build
+```
+
+### Type Checking
+
+```bash
+# Run TypeScript type checking
+npm run type-check
+
+# Watch mode for continuous type checking
+npm run type-check:watch
 ```
 
 ### Preview Production Build
