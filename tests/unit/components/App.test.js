@@ -11,6 +11,8 @@ import Members from '../../../src/components/Members.vue'
 import Employers from '../../../src/components/Employers.vue'
 import News from '../../../src/components/News.vue'
 import Contact from '../../../src/components/Contact.vue'
+import Careers from '../../../src/components/Careers.vue'
+import Retirees from '../../../src/components/Retirees.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +24,8 @@ const router = createRouter({
     { path: '/employers', component: Employers },
     { path: '/news', component: News },
     { path: '/contact', component: Contact },
+    { path: '/careers', component: Careers },
+    { path: '/retirees', component: Retirees },
   ]
 })
 
