@@ -9,6 +9,8 @@ import Members from './components/Members.vue'
 import Employers from './components/Employers.vue'
 import News from './components/News.vue'
 import Contact from './components/Contact.vue'
+import Careers from './components/Careers.vue'
+import Retirees from './components/Retirees.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -18,6 +20,8 @@ const routes = [
   { path: '/employers', component: Employers },
   { path: '/news', component: News },
   { path: '/contact', component: Contact },
+  { path: '/careers', component: Careers },
+  { path: '/retirees', component: Retirees },
 ]
 
 const router = createRouter({
