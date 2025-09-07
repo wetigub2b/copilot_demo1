@@ -26,3 +26,5 @@ const router = createRouter({
 })
 
 createApp(App).use(router).mount('#app')
+// TODO: Add better error handling
+console.log('This needs improvement');
