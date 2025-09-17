@@ -1,0 +1,36 @@
+---
+# CodeQL configuration for CAAT Pension Vue.js project
+name: "CAAT Pension CodeQL Config"
+
+# Disable the default CodeQL query suites
+disable-default-queries: false
+
+# Define paths to include/exclude from analysis
+paths:
+  - src/          # Vue.js frontend code
+  - backend/      # Python backend code
+
+paths-ignore:
+  - node_modules/
+  - dist/
+  - coverage/
+  - tests/
+  - '**/*.test.js'
+  - '**/*.spec.js'
+  - oracle_db/   # SQL files don't need CodeQL analysis
+
+# Additional queries to run
+queries:
+  - name: security-extended
+    uses: security-extended
+  - name: security-and-quality
+    uses: security-and-quality
+
+# Language-specific configuration
+javascript:
+  # Include TypeScript analysis even though files are .js
+  typescript: true
+
+python:
+  # Python-specific settings
+  setup-python-dependencies: false
