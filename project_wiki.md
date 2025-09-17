@@ -774,6 +774,62 @@ graph TD
     style Production fill:#ffb,stroke:#333,stroke-width:2px
 ```
 
+### 🔒 Security Analysis (CodeQL)
+
+The project includes comprehensive static code analysis using GitHub's CodeQL for both JavaScript/Vue.js and Python code.
+
+#### CodeQL Workflows
+
+**Automatic Triggers:**
+- Push events to `main` and `develop` branches
+- Pull requests targeting `main` and `develop` branches
+- Weekly scheduled runs (Mondays at 18:42 UTC)
+
+**Languages Analyzed:**
+- **JavaScript/TypeScript**: Analyzes Vue.js components, JavaScript files, and frontend code
+- **Python**: Analyzes FastAPI backend code and Python modules
+
+#### Configuration
+
+The CodeQL analysis is configured via `.github/codeql/codeql-config.yml`:
+
+```yaml
+# Paths included in analysis
+paths:
+  - src/          # Vue.js frontend code
+  - backend/      # Python backend code
+
+# Paths excluded from analysis
+paths-ignore:
+  - node_modules/
+  - dist/
+  - coverage/
+  - tests/
+  - oracle_db/   # SQL files
+```
+
+#### Query Suites
+
+- **Security Extended**: Comprehensive security vulnerability detection
+- **Security and Quality**: Security issues plus code quality checks
+
+#### Viewing Results
+
+1. Navigate to the **Security** tab in the GitHub repository
+2. Click on **Code scanning alerts** to view CodeQL findings
+3. Review and address any identified security vulnerabilities
+4. Use the **Dismiss** option for false positives with proper justification
+
+#### Manual CodeQL Runs
+
+```bash
+# Trigger CodeQL analysis manually
+gh workflow run codeql.yml
+
+# View recent CodeQL workflow runs
+gh run list --workflow=codeql.yml
+```
+
 ---
 
 ## 🔧 Troubleshooting
